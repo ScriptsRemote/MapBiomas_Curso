@@ -10,8 +10,7 @@ import plotly.express as px
 st.set_page_config(layout='wide')
 
 ##Inicialização do GEE
-# ee.Initialize(project='ee-meusuario')
-m = geemap.Map()
+m = geemap.Map(center=[-15, -55], zoom=6)
 
 ##Titulo do app 
 st.title('APP - MapBiomas')
