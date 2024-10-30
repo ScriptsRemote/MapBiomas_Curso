@@ -17,6 +17,9 @@ st.write("""
     **Fonte dos dados**: [MapBiomas](https://mapbiomas.org)
 """)
 
+# Criando o mapa com geemap
+m = geemap.Map(center=[-15.0, -55.0], zoom=6)
+
 # Carregar a imagem MapBiomas
 mapbiomas_image = ee.Image('projects/mapbiomas-public/assets/brazil/lulc/collection9/mapbiomas_collection90_integration_v1')
 
@@ -88,8 +91,7 @@ if geometry_input:
     except:
         st.error("Erro no formato de coordenadas. Verifique o GeoJSON inserido.")
 
-# Criando o mapa com geemap
-m = geemap.Map(center=[-15.0, -55.0], zoom=6)
+
 
 # Se houver uma geometria, aplicar o recorte e centralizar o mapa na área de estudo
 if geometry:
