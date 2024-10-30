@@ -11,7 +11,7 @@ st.set_page_config(layout='wide')
 
 ##Inicialização do GEE
 # ee.Initialize(project='ee-meusuario')
-m = geemap.Map(center=[-15, -55], zoom=6)
+m = geemap.Map()
 
 ##Titulo do app 
 st.title('APP - MapBiomas')
