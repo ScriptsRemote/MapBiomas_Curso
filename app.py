@@ -8,9 +8,6 @@ import plotly.express as px
 # Configurar o layout wide
 st.set_page_config(layout="wide", page_title="App - MapBiomas")
 
-# Inicializar o Earth Engine
-ee.Initialize()
-
 # Título e descrição do aplicativo
 st.title("App - MapBiomas")
 st.write("""
