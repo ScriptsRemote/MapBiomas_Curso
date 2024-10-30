@@ -88,8 +88,8 @@ geometry = None
 if geometry_input:
     try:
         geometry = ee.Geometry(json.loads(geometry_input)["geometry"])
-    except:
-        st.error("Erro no formato de coordenadas. Verifique o GeoJSON inserido.")
+    except json.JSONDecodeError as e:
+        st.error(f"Erro no formato de coordenadas: {str(e)}. Verifique o JSON inserido.")
 
 
 
