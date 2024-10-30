@@ -90,8 +90,6 @@ if geometry_input:
         st.error('Erro no Formato de Coordenadas. Verifique o GeoJson inserido')
 
 
-m = geemap.Map(center=[-15, -55], zoom=6)
-
 # Se houver uma geometria, aplicar o recorte e centralizar o mapa na área de estudo
 if geometry:
     # Exibir a área de estudo no mapa
