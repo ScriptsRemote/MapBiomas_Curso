@@ -9,8 +9,7 @@ import plotly.express as px
 
 st.set_page_config(layout='wide')
 
-##Inicialização do GEE
-m = geemap.Map(center=[-15, -55], zoom=6)
+
 
 ##Titulo do app 
 st.title('APP - MapBiomas')
@@ -88,6 +87,8 @@ if geometry_input:
     except:
         st.error('Erro no Formato de Coordenadas. Verifique o GeoJson inserido')
 
+##Inicialização do GEE
+m = geemap.Map()
 
 # Se houver uma geometria, aplicar o recorte e centralizar o mapa na área de estudo
 if geometry:
