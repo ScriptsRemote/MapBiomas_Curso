@@ -79,7 +79,7 @@ selected_years = st.multiselect("Selecione o(s) ano(s)", years, default=[2023])
 # Expander para inserir a área de estudo pelo usuário (em formato GeoJSON)
 with st.expander("Defina a área de estudo (opcional)"):
     geometry_input = st.text_area(
-        "Insira as coordenadas da área de estudo em formato GeoJSON.",
+        "Insira as coordenadas da área de estudo em formato GeoJSON. Utilize o mapa abaixo e as ferramentas de geometria para selecionar sua área de esutdo. Depois, clique sobre a área de interesse e selecione a feature.",
         ""
     )
 
@@ -122,7 +122,7 @@ if geometry:
                 reducer=ee.Reducer.sum(),
                 geometry=geometry,
                 scale=30,
-                maxPixels=1e9
+                maxPixels=1e13
             ).getInfo()
             area_km2 = class_area.get(f"classification_{year}", 0) / 1e6  # Convertendo para km²
             areas.append({"Ano": year, "Classe": class_value, "Nome da Classe": class_names[class_value], "Área (km²)": area_km2})
